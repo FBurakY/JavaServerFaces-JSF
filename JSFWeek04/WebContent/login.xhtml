@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+
+ <h:form prependId="false">
+ 	<table>
+ 		<tr>
+ 			<td> Name : </td>
+ 			<td> <h:inputText value="#{ajaxBean.name}" id="nameId"></h:inputText> </td>
+ 		</tr> 		
+ 		<tr>
+ 			<td> Surname : </td>
+ 			<td> <h:inputText value="#{ajaxBean.surname}" id="surnameId"></h:inputText> </td>
+ 		</tr>
+ 		
+ 	</table>
+ 	 <p>
+ 	  <h:commandButton value="Submit!">
+ 	  	<f:ajax execute="nameId" render="outPutId"></f:ajax>
+ 	  </h:commandButton>
+ 	 </p>
+ 	
+ 	 <p>
+		<h:outputText id="outPutId" value="#{ajaxBean.helloMessage}"/>
+ 	 </p>
+ 	
+
+ </h:form>
+ 
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">	
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Input Text Components</title>
+</h:head>
+
+<style>
+
+.myclass{
+	color: red;
+}
+
+</style>
+
+<script>
+
+funcition callMe(){
+	alert("hello");
+}
+
+</script>
+<h:body>
+
+	<table>
+		<tr>
+			<td>Input Text:</td>
+			<td><h:inputText value="#{inputBean.name}"></h:inputText></td>
+		</tr>
+		<tr>
+			<td>InputSecret:</td>
+			<td><h:inputSecret value="#{inputBean.password}"></h:inputSecret></td>
+		</tr>
+		<tr>
+			<td>Binding:</td>
+			<td><h:inputText value="#{InputBean.backingBinding}"></h:inputText></td>
+		</tr>
+		<tr>
+			<td>Readonly:</td>
+			<td><h:inputText value="I am readonly" readonly="true"></h:inputText></td>
+		</tr>
+		<tr>
+			<td>Disable:</td>
+			<td><h:inputText value="I am disable" disabled="true"></h:inputText></td>
+		</tr>
+		<tr>
+			<td>MaxLenght &amp; Size;</td>
+			<td><h:inputText maxlength="5" size="8"></h:inputText></td>
+		</tr>
+		<tr>
+			<td>Style:</td>
+			<td><h:inputText style="color:blue"></h:inputText></td>
+		</tr>
+		<tr>
+			<td>Style Class:</td>
+			<td><h:inputText styleClass="myclass"></h:inputText></td>
+		</tr>
+		<tr>
+			<td>Call JS Function:</td>
+			<td><h:inputText onblur="callMe()"></h:inputText></td>
+		</tr>
+		<tr>
+			<td>InputTextArea:</td>
+			<td><h:inputTextarea></h:inputTextarea></td>
+		</tr>
+		<tr>
+			<td>Rows</td>
+			<td><h:inputTextarea rows="5"></h:inputTextarea></td>
+		</tr>
+		<tr>
+			<td>Cols</td>
+			<td><h:inputTextarea cols="5"></h:inputTextarea></td>
+		</tr>
+	
+	</table>
+
+
+</h:body>
+
+</html>

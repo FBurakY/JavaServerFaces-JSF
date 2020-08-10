@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core">
+<h:head>
+	<title>Use JSTL in JSF 2.X Facelets</title>
+</h:head>
+<h:body>
+
+	<!-- c:set tagi ile attribute ekleyebiliriz. -->
+	<c:set var="mySessionAttribute" scope="session"
+		value="my session value" />
+	<!-- c:set tagi ile ekledigimiz attribute'lere ulasalim -->
+	<p>${mySessionAttribute}</p>
+	<p>#{mySessionAttribute}</p>
+
+	<!-- c:set tagi ile bean property alanlarina deger atayabiliriz. -->
+	<p>
+		<c:set target="${JSTLBean}" property="property1"
+			value="property1 value" />
+	</p>
+
+	<p>${JSTLBean.property1}</p>
+
+	<!-- c:set tagi ile map'lere eleman ekleyebiliriz. -->
+	<p>
+		<c:set target="${JSTLBean.map}" property="key1" value="map value1" />
+	</p>
+
+	<p>${JSTLBean.map.key1}</p>
+
+
+	<c:set var="result" scope="request" value="70" />
+
+	<c:if test="${result > 50}">
+		<p>You pass exam ! : ${result}</p>
+	</c:if>
+
+	<c:set var="salary" scope="session" value="5000" />
+
+	<c:choose>
+
+		<c:when test="${salary le 2000}">
+	       Low Salary
+	    </c:when>
+
+		<c:when test="${salary lt 10000}">
+	        Salary is very good.
+	    </c:when>
+		<c:otherwise>
+	        Excellent salary!
+	    </c:otherwise>
+
+	</c:choose>
+
+	<p>
+		<c:set target="${JSTLBean.map}" property="key2" value="map value2" />
+		<c:set target="${JSTLBean.map}" property="key3" value="map value3" />
+		<c:set target="${JSTLBean.map}" property="key4" value="map value4" />
+	</p>
+
+	<c:forEach var="entry" items="#{JSTLBean.map}">
+		<p>${entry.key} , #{entry.value}</p>
+	</c:forEach>
+
+
+</h:body>
+</html>

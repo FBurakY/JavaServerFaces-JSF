@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">	
+	
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>OutPut Text Components</title>
+</h:head>
+
+<h:body>
+
+	<p><h:outputText value="Hello outPutText"></h:outputText></p>
+	<p><h:outputText value="#{outputBean.plainText}"></h:outputText></p>
+	<p><h:outputText value="#{outputBean.htmlText}"></h:outputText></p>
+	<p>#{outputBean.htmlText}</p>
+	<p><h:outputText value="#{outputBean.htmlText}" escape="false"></h:outputText></p>
+	<p><h:outputText value="this is blue" style="color:blue"></h:outputText></p>
+	
+	<p>
+		<h:outputFormat value="Name: {0} Surname : {1}"> 
+		<f:param value="Fadıl Burak"></f:param>
+		<f:param value="YURTSEVER"></f:param>
+		</h:outputFormat>	
+	</p>
+	
+	  
+	<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
+	<!-- Resources Dizini Altında CSS Dizini Yer Almaktadır. Library Attribute olarak css dizinini belirtebiliriz -->
+	<p><h:outputText value="red class'i style.css dosyasında yer almaktadır" styleClass="red"></h:outputText></p>
+	
+	<h:outputScript library="js" name="cool.js"></h:outputScript>
+	<p><h:graphicImage library="Images" name="duke.png" onclick="callMe()"></h:graphicImage></p>
+	
+</h:body>
+</html>
