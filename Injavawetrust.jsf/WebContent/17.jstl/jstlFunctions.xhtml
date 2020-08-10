@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+<h:head>
+	<title>Use JSTL Functions in JSF 2.X Facelets</title>
+</h:head>
+<h:body>
+
+	<c:set var="myattribute" value="injavawetrust" />
+
+	<c:if test="${fn:contains(myattribute, 'java')}">
+		<p>Founded! java</p>
+	</c:if>
+	
+	<c:if test="${fn:containsIgnoreCase(myattribute, 'JAVA')}">
+		<p>Founded! JAVA</p>
+	</c:if>
+	
+	<c:set var="myattribute" value="injavawetrust" />
+
+	<c:if test="${fn:startsWith(myattribute, 'in')}">
+		<p>String starts with in</p>
+	</c:if>
+
+
+</h:body>
+</html>

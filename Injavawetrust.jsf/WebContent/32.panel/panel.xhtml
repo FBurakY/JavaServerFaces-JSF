@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>h:panelGrid</title>
+</h:head>
+<h:body>
+	<h:form>
+		
+		<h:panelGrid border="1">
+
+			<h:outputText value="Name" />
+			<h:inputText value="#{panelGridBean.name}" />
+			<h:outputText value="Surname" />
+			<h:inputText value="#{panelGridBean.surname}" />
+			<h:outputText value="Age" />
+			<h:inputText value="#{panelGridBean.age}" />
+
+		</h:panelGrid>
+
+		<p>columns=2</p>
+
+		<h:panelGrid columns="2" border="1">
+
+			<h:outputText value="Name" />
+			<h:inputText value="#{personBean.name}" />
+			<h:outputText value="Surname" />
+			<h:inputText value="#{personBean.name}" />
+			<h:outputText value="Age" />
+			<h:inputText value="#{personBean.name}" />
+
+		</h:panelGrid>
+
+		<p>h:panelGroup</p>
+
+		<h:panelGrid border="1">
+
+			<h:panelGroup>
+				<h:outputText value="Name" />
+				<h:inputText value="#{personBean.name}" />
+			</h:panelGroup>
+
+			<h:panelGroup>
+				<h:outputText value="Surname" />
+				<h:inputText value="#{personBean.name}" />
+			</h:panelGroup>
+
+			<h:panelGroup>
+				<h:outputText value="Age" />
+				<h:inputText value="#{personBean.name}" />
+			</h:panelGroup>
+		</h:panelGrid>
+
+		<p>css</p>
+		
+		<h:panelGrid columns="2" border="1" rowClasses="myRowClass" bgcolor="" footerClass="myFooterClass">
+
+			<f:facet name="header">
+				<h:outputText value="User Details" />
+			</f:facet>
+			
+			<f:facet name="footer">
+				<h:outputText value="footer info" />
+			</f:facet>
+
+			<h:outputText value="Name" />
+			<h:inputText value="#{personBean.name}" />
+			<h:outputText value="Surname" />
+			<h:inputText value="#{personBean.name}" />
+			<h:outputText value="Age" />
+			<h:inputText value="#{personBean.name}" />
+
+		</h:panelGrid>
+
+	</h:form>
+</h:body>
+
+<style>
+.myFooterClass {
+   color: crimson;
+}
+.myRowClass{
+   color:#5882FA;
+}
+</style>
+
+</html>

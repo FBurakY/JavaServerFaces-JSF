@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>ViewScoped Bean </title>
+</h:head>
+<h:body>
+	<h:form prependId="false">
+		<h3>Please enter your name and password.</h3>
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td><h:inputText value="#{viewScopedBean.name}" id="nameId" /></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><h:inputSecret value="#{viewScopedBean.password}" id="passwordId"/></td>
+			</tr>
+		</table>
+		<p>
+
+			<!--<h:commandButton value="Login" action="welcome" /> -->
+
+			<h:commandButton value="Login">
+				<f:ajax execute="nameId" render="out out2 out3" />
+			</h:commandButton>
+		</p>
+		
+		<p>
+			<h:link value="Page1" outcome="page1" />
+		</p>
+
+		<h3>
+			<h:outputText id="out" value="#{viewScopedBean.greeting}" />
+		</h3>
+		
+		<h3>
+			Counter : <h:outputText id="out2" value="#{viewScopedBean.counter}" />
+		</h3>
+		
+		<h3>
+			HashCode : <h:outputText id="out3" value="#{viewScopedBean.hashCode}" />
+		</h3>
+
+	</h:form>
+</h:body>
+</html>

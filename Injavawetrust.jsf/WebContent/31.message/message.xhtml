@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>h:message</title>
+</h:head>
+<h:body>
+	<h:form>
+		
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td><h:inputText id="name" value="#{validationErrorBean.name}" required="true" label="name" requiredMessage="it is required!"/></td>
+				<td><h:message for="name"  errorClass="errorCss" /> </td>
+			</tr>
+			
+			<tr>
+				<td>Surname:</td>
+				<td><h:inputText id="surname" value="#{validationErrorBean.surname}" required="true" label="surname" /></td>
+				<td><h:message for="surname" errorClass="errorCss" /> </td>
+			</tr>
+			
+			<tr>
+				<td>Age:</td>
+				<td><h:inputText id="age" value="#{validationErrorBean.age}" required="true" label="age" /></td>
+				<td><h:message for="age" errorClass="errorCss" /> </td>
+			</tr>
+		</table>
+		
+		<p>
+			<h:commandButton value="Login" action="welcome" />
+		</p>
+		
+		<h:messages/>
+		
+	</h:form>
+</h:body>
+
+<style>
+.errorCss{
+color:red;
+margin:8px;
+}
+</style>
+</html>

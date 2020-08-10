@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>radiobutton components</title>
+</h:head>
+
+<h:body>
+	<h:form prependId="false" id="formId1">
+
+		<h1>h:selectOneRadio examples</h1>
+
+		<h2>f:selectItem</h2>
+		<h:selectOneRadio value="#{radioButtonBean.gender}">
+			<f:selectItem itemValue="Man" itemLabel="Mr" />
+			<f:selectItem itemValue="Woman" itemLabel="Mrs" />
+		</h:selectOneRadio>
+
+		<h2>f:selectItems with array</h2>
+
+		<h:selectOneRadio value="#{radioButtonBean.maritalStatus}">
+			<f:selectItems value="#{radioButtonBean.preparedMaritalStatus}" />
+		</h:selectOneRadio>
+
+
+		<h2>f:selectItems with map</h2>
+
+		<h:selectOneRadio value="#{radioButtonBean.job}">
+			<f:selectItems value="#{radioButtonBean.preparedJobs}" />
+		</h:selectOneRadio>
+
+		<h2>f:selectItems with Object</h2>
+		
+		<h:selectOneRadio value="#{radioButtonBean.department}">
+			<f:selectItems value="#{radioButtonBean.preparedDepartments}"
+				var="dept" itemLabel="#{dept.radioLabel}"
+				itemValue="#{dept.radioValue}" />
+		</h:selectOneRadio>
+
+		<p>
+			<h:commandButton value="result.xhtml" action="result" />
+		</p>
+
+	</h:form>
+</h:body>
+</html>

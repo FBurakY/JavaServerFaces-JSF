@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>link components</title>
+</h:head>
+
+<h:body>
+	<h:form prependId="false" id="formId1">
+	
+		<h1>h:commandLink examples</h1>
+		<p>
+			<h:commandLink value="Page1" action="page1" />
+		</p>
+				
+		<p>
+			<h:commandLink value="Page1 action" action="#{linkBean.navigateToPage1}" />
+		</p>
+		
+		<p>
+			<h:commandLink action="#{linkBean.navigateToPage2}" value="Page2 with f:param">
+				<f:param name="personName" value="Levent" />
+			</h:commandLink>
+		</p>
+		
+		<p>
+			<h:commandLink action="page1">
+				<h:graphicImage value="java.png"/>
+			</h:commandLink>
+		</p>	
+		
+		<h1>h:link examples</h1>
+		
+		<p>
+			<h:link value="Page1" outcome="page1" />
+		</p>
+		
+		<p>
+			<h:link value="Page1 outcome"  outcome="#{linkBean.myPage1Outcome}" />
+		</p>	
+		
+		<p>
+			<h:link outcome="page2" value="Page2 with f:param">
+				<f:param name="personName" value="Levent" />
+			</h:link>
+		</p>
+		
+		<p>
+			<h:link outcome="page1">
+				<h:graphicImage value="java.png"/>
+			</h:link>
+		</p>
+		
+		<h1>h:outputLink examples</h1>
+		
+		<p>
+			<h:outputLink value="page1.xhtml"> 
+			Page1 				
+			</h:outputLink>
+		</p>
+		
+		<p>
+			<h:outputLink value="#{linkBean.myPage1Outcome}.xhtml"> 
+			Page1 outcome 				
+			</h:outputLink>
+		</p>
+					
+		<p>
+			<h:outputLink value="page2.xhtml"> 
+				Page2 with param 				
+				<f:param name="personName" value="Levent" />
+			</h:outputLink>
+		</p>
+		
+		<p>
+			<h:outputLink value="page1.xhtml">
+				<h:graphicImage value="java.png"/>
+			</h:outputLink>
+		</p>
+		
+	</h:form>
+</h:body>
+</html>

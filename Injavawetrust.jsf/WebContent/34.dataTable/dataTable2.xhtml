@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<h:outputStylesheet library="css" name="table-style.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Data Table</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h:dataTable value="#{personDataBean.persons}" var="myPerson"
+			captionStyle="font-size:20px" styleClass="person-table"
+			headerClass="person-table-header"
+			rowClasses="person-table-oddRow,person-table-evenRow">
+
+			<f:facet name="caption">Person List</f:facet>
+
+			<h:column>
+				<f:facet name="header">Name</f:facet>
+				#{myPerson.name}
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Surname</f:facet>
+				#{myPerson.surname}		
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Gender</f:facet>
+				#{myPerson.gender}
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Age</f:facet>
+				#{myPerson.age}
+			</h:column>
+
+		</h:dataTable>
+	
+		<br/>
+	
+		<h:dataTable value="#{personDataBean.persons}" var="myPerson"
+			captionStyle="font-size:20px" styleClass="person-table"
+			headerClass="person-table-header"
+			columnClasses="person-table-oddRow,person-table-evenRow,
+			person-table-oddRow,person-table-evenRow">
+			<!-- columnClasses icin tekrarlama ozelligi rowClasses'ta oldugu gibi yoktur.
+			bu nedenle tum column icin css belirtilmelidir.
+			 -->
+			<f:facet name="caption">Person List</f:facet>
+
+			<h:column>
+				<f:facet name="header">Name</f:facet>
+				#{myPerson.name}
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Surname</f:facet>
+				#{myPerson.surname}		
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Gender</f:facet>
+				#{myPerson.gender}
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Age</f:facet>
+				#{myPerson.age}
+			</h:column>
+
+		</h:dataTable>
+	</h:form>
+</h:body>
+</html>

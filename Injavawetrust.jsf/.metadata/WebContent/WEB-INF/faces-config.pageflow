@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14341874878380" configfile="/Injavawetrust.jsf/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="338" y="360" id="pf144033423479113" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" outlinks="pf144033509094450 pf144033509808351 pf14554269370070" inlinks="pf14554269370071" path="/19.dynamic.navigation/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="19.dynamic.navigation/welcome.xhtml" x="554" y="178" id="pf144033475424139" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf144033509094450" path="/19.dynamic.navigation/welcome.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="19.dynamic.navigation/relogin.xhtml" x="122" y="461" id="pf144033475424140" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf14554269370082 pf14554269370071" inlinks="pf144033509808351" path="/19.dynamic.navigation/relogin.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="19.dynamic.navigation/locked.xhtml" x="554" y="562" id="pf14554269370083" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf14554269370070 pf14554269370082" path="/19.dynamic.navigation/locked.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="19.dynamic.navigation/conditional/conditional.xhtml" x="122" y="1210" id="pf14554269370084" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf14554269370085 pf14554269370086 pf14554269370087" path="/19.dynamic.navigation/conditional/conditional.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="19.dynamic.navigation/conditional/page1.xhtml" x="338" y="826" id="pf14554269370088" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf14554269370085" path="/19.dynamic.navigation/conditional/page1.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="19.dynamic.navigation/conditional/page2.xhtml" x="338" y="1210" id="pf14554269370089" referenceLink="//@navigationRule.2/@navigationCase.1/@toViewId|" inlinks="pf14554269370086" path="/19.dynamic.navigation/conditional/page2.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="19.dynamic.navigation/conditional/page3.xhtml" x="338" y="1594" id="pf145542693700810" referenceLink="//@navigationRule.2/@navigationCase.2/@toViewId|" inlinks="pf14554269370087" path="/19.dynamic.navigation/conditional/page3.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="19.dynamic.navigation/from.action/fromAction.xhtml" x="122" y="2170" id="pf145542693700811" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf145542693700812 pf145542693700813" path="/19.dynamic.navigation/from.action/fromAction.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="19.dynamic.navigation/from.action/page1.xhtml" x="338" y="1978" id="pf145542693700814" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf145542693700812" path="/19.dynamic.navigation/from.action/page1.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="19.dynamic.navigation/from.action/page2.xhtml" x="338" y="2362" id="pf145542693700815" referenceLink="//@navigationRule.3/@navigationCase.1/@toViewId|" inlinks="pf145542693700813" path="/19.dynamic.navigation/from.action/page2.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="19.dynamic.navigation/redirection/redirection.xhtml" x="122" y="2746" id="pf145542693700816" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf145542693700817" path="/19.dynamic.navigation/redirection/redirection.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="19.dynamic.navigation/redirection/page1.xhtml" x="338" y="2746" id="pf145542693700818" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" inlinks="pf145542693700817" path="/19.dynamic.navigation/redirection/page1.xhtml"/>
+  <links id="pf144033509094450" target="pf144033475424139" source="pf144033423479113" outcome="success"/>
+  <links id="pf144033509808351" target="pf144033475424140" source="pf144033423479113" outcome="failure"/>
+  <links id="pf14554269370070" target="pf14554269370083" source="pf144033423479113" outcome="locked"/>
+  <links id="pf14554269370082" target="pf14554269370083" source="pf144033475424140" outcome="locked"/>
+  <links id="pf14554269370071" target="pf144033423479113" source="pf144033475424140" outcome="retry"/>
+  <links id="pf14554269370085" target="pf14554269370088" source="pf14554269370084" outcome="testOutcome"/>
+  <links id="pf14554269370086" target="pf14554269370089" source="pf14554269370084" outcome="testOutcome"/>
+  <links id="pf14554269370087" target="pf145542693700810" source="pf14554269370084" outcome="testOutcome"/>
+  <links id="pf145542693700812" target="pf145542693700814" source="pf145542693700811" outcome="navigate" fromaction="#{fromActionNavigationBean.navigate1}"/>
+  <links id="pf145542693700813" target="pf145542693700815" source="pf145542693700811" outcome="navigate" fromaction="#{fromActionNavigationBean.navigate2}"/>
+  <links id="pf145542693700817" target="pf145542693700818" source="pf145542693700816" outcome="redirectOutcome" redirect="true"/>
+</pageflow:Pageflow>

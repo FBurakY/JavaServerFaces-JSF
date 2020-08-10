@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Expression Language Example</title>
+</h:head>
+<h:body>
+
+	<h:form prependId="false">
+		<h3>Please enter Key and Value</h3>
+		<table>
+			<tr>
+				<td>Key:</td>
+				<td><h:inputText value="#{elLangBean.key}" id="keyId" /></td>
+			</tr>
+			<tr>
+				<td>Value:</td>
+				<td><h:inputText value="#{elLangBean['value']}" id="valueId" /></td>
+			</tr>
+		</table>
+		<p>
+
+			<h:selectOneMenu value="#{elLangBean.selectedFramework}"
+				id="frameworksId">
+				<f:selectItems value="#{elLangBean.frameworkMap}" />
+			</h:selectOneMenu>
+
+			<h:commandButton value="Add">
+				<f:ajax execute="keyId valueId frameworksId"
+					listener="#{elLangBean.addFramework(elLangBean.key,elLangBean.value)}"
+					render="frameworksId"></f:ajax>
+			</h:commandButton>
+		</p>
+
+
+	</h:form>
+
+</h:body>
+</html>

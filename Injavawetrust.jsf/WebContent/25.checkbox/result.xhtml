@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>results</title>
+</h:head>
+<h:body>
+	
+	<h2>h:selectBooleanCheckbox</h2>
+	
+	#{checkboxBean.contactMe}	
+
+	<h2>f:selectItem</h2>
+	 <c:forEach var="lang" items="#{checkboxBean.progLanguages}">     
+       <p>${lang}</p>
+    </c:forEach>
+    
+    <h2>f:selectItems with array</h2>
+	 <c:forEach var="jpa" items="#{checkboxBean.jpaFrameworks}">     
+       <p>${jpa}</p>
+    </c:forEach>
+    
+    <h2>f:selectItems with map</h2>
+	 <c:forEach var="mvc" items="#{checkboxBean.mvcFrameworks}">     
+       <p>${mvc}</p>
+    </c:forEach>
+    
+        
+    <h2>f:selectItems with Object</h2>
+	 <c:forEach var="database" items="#{checkboxBean.databases}">     
+       <p>${database}</p>
+    </c:forEach>
+	
+</h:body>
+</html>

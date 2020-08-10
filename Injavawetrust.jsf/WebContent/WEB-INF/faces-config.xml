@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+        http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+
+	<!--# managed-bean etiketi ile Managed Bean tanimina baslanir. 
+		# managed-bean-name etiketi ile unique/tekil bir isim veririz. 
+		# managed-bean-class etiketi ile sinif tanimini yapariz. 
+		# managed-bean-scope etiketi ile Managed Bean icin scope tanimini yapariz. 
+		# Eger property initialize edilecekse bu durumda managed-property 
+		etiketini kullaniriz. Hangi property initialize edilecekse bu durumda property-name 
+		etiketinde bunu belirtiriz. value etiketi ile ilgili degeri belirtiriz. -->
+		
+	<managed-bean>
+		<managed-bean-name>facesConfigBean</managed-bean-name>
+		<managed-bean-class>_05.faces.config.FacesConfigBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+
+		<managed-property>
+			<property-name>name</property-name>
+			<value>admin</value>
+		</managed-property>
+
+	</managed-bean>
+
+
+	<!--dynamic navigation example -->
+
+	<navigation-rule>
+		<from-view-id>/19.dynamic.navigation/login.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/19.dynamic.navigation/welcome.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>failure</from-outcome>
+			<to-view-id>/19.dynamic.navigation/relogin.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>locked</from-outcome>
+			<to-view-id>/19.dynamic.navigation/locked.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/19.dynamic.navigation/relogin.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>locked</from-outcome>
+			<to-view-id>/19.dynamic.navigation/locked.xhtml</to-view-id>
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>retry</from-outcome>
+			<to-view-id>/19.dynamic.navigation/login.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!--conditional navigation example -->
+
+	<navigation-rule>
+		<from-view-id>/19.dynamic.navigation/conditional/conditional.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>testOutcome</from-outcome>
+			<if>#{conditionalNavigationBean.property1 =='page1'}</if>
+			<to-view-id>/19.dynamic.navigation/conditional/page1.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>testOutcome</from-outcome>
+			<if>#{conditionalNavigationBean.property1 =='page2'}</if>
+			<to-view-id>/19.dynamic.navigation/conditional/page2.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>testOutcome</from-outcome>
+			<if>#{conditionalNavigationBean.property1 =='page3' and conditionalNavigationBean.property2 ==10}</if>
+			<to-view-id>/19.dynamic.navigation/conditional/page3.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- from action navigation example -->
+
+	<navigation-rule>
+		<from-view-id>/19.dynamic.navigation/from.action/fromAction.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{fromActionNavigationBean.navigate1}</from-action>
+			<from-outcome>navigate</from-outcome>
+			<to-view-id>/19.dynamic.navigation/from.action/page1.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-action>#{fromActionNavigationBean.navigate2}</from-action>
+			<from-outcome>navigate</from-outcome>
+			<to-view-id>/19.dynamic.navigation/from.action/page2.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	<!-- redirect navigation example -->
+
+	<navigation-rule>
+		<from-view-id>/19.dynamic.navigation/redirection/redirection.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>redirectOutcome</from-outcome>
+			<to-view-id>/19.dynamic.navigation/redirection/page1.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+
+</faces-config>

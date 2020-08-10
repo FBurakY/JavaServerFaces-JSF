@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>InputText Components</title>
+</h:head>
+
+<style>
+.myclass {
+	color: red
+}
+</style>
+
+
+<script>
+	function callMe() {
+		alert("Hello!");
+	}
+</script>
+
+<h:body>
+
+	<table>
+		<tr>
+			<td>InputText:</td>
+			<td><h:inputText value="#{inputBean.name}" /></td>
+		</tr>
+		<tr>
+			<td>InputSecret</td>
+			<td><h:inputSecret value="#{inputBean.password}" /></td>
+		</tr>
+
+		<tr>
+			<td>Binding</td>
+			<td><h:inputText binding="#{inputBean.backingBinding}" /></td>
+		</tr>
+
+		<tr>
+			<td>Readonly:</td>
+			<td><h:inputText value="I am readonly" readonly="true" /></td>
+		</tr>
+
+		<tr>
+			<td>Disabled:</td>
+			<td><h:inputText value="I am disabled" disabled="true" /></td>
+		</tr>
+
+		<tr>
+			<td>MaxLength &amp; Size:</td>
+			<td><h:inputText maxlength="5" size="8" /></td>
+		</tr>
+
+		<tr>
+			<td>Style:</td>
+			<td><h:inputText style="color:blue" /></td>
+		</tr>
+
+		<tr>
+			<td>StyleClass:</td>
+			<td><h:inputText styleClass="myclass" /></td>
+		</tr>
+
+		<tr>
+			<td>Call JS function:</td>
+			<td><h:inputText onblur="callMe()"/></td>
+		</tr>
+
+		<tr>
+			<td>InputTextArea:</td>
+			<td><h:inputTextarea /></td>
+		</tr>
+		<tr>
+			<td>Rows</td>
+			<td><h:inputTextarea rows="5" /></td>
+		</tr>
+
+		<tr>
+			<td>Cols</td>
+			<td><h:inputTextarea cols="5" /></td>
+		</tr>
+
+		<tr>
+			<td>There is a hidden text</td>
+			<td><h:inputHidden value="iam hidden!" /></td>
+		</tr>
+
+	</table>
+
+</h:body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>checkbox components</title>
+</h:head>
+
+<h:body>
+	<h:form prependId="false" id="formId1">
+
+		<h1>h:selectBooleanCheckbox examples</h1>
+	
+		<h:selectBooleanCheckbox value="#{checkboxBean.contactMe}"/>
+		
+		
+		<h1>h:selectManyCheckbox examples</h1>
+		
+		<h2>f:selectItem</h2>
+		<!-- f:selectItem'i kullanarak hardcoded olarak checkBox olusturabiliriz. -->
+		<h:selectManyCheckbox value="#{checkboxBean.progLanguages}">
+   			<f:selectItem itemValue="Java" itemLabel="Java Prog-Lang" />
+   			<f:selectItem itemValue="C" itemLabel="C Prog-Lang" />
+   			<f:selectItem itemValue="C++" itemLabel="C++ Prog-Lang" />
+   			<f:selectItem itemValue="C#" itemLabel="C# Prog-Lang" />
+   		</h:selectManyCheckbox>
+   		
+   		<h2>f:selectItems with array</h2>
+   		<!-- f:selectItems'i kullanarak value attribute'te bir String[] array kullanabiliriz.
+   		#{checkboxBean.prepareJpaFrameworks} getPrepareJpaFrameworks metodunu calistiracaktir.
+   		Getter metodunu cagiracak sekilde tanimlamamiz gereklidir !
+   		Secilen checkbox degerleri jpaFrameworks array'ine baglanacaktir(wire)
+   		-->
+   		<h:selectManyCheckbox value="#{checkboxBean.jpaFrameworks}">
+   			<f:selectItems value="#{checkboxBean.preparedJpaFrameworks}"/>
+   		</h:selectManyCheckbox>
+   		
+   		<!-- f:selectItems da array kullanabildigimiz gibi map de kullanabiliriz. -->
+   		<h2>f:selectItems with map</h2>
+   		<h:selectManyCheckbox value="#{checkboxBean.mvcFrameworks}">
+   			<f:selectItems value="#{checkboxBean.preparedMVCFrameworks}"/>
+   		</h:selectManyCheckbox>
+   		
+   		
+   		<h2>f:selectItems with Object</h2>
+   		<!-- f:selectItem Object dizisi kullanabiliriz.  -->
+   		<h:selectManyCheckbox value="#{checkboxBean.databases}">
+   			<f:selectItems value="#{checkboxBean.preparedDatabases}" var="db"
+   			itemLabel="#{db.checkboxLabel}" itemValue="#{db.checkboxValue}"
+   			/>
+   		</h:selectManyCheckbox>
+   		
+   		
+   		<p>
+			<h:commandButton value="result.xhtml" action="result" />
+		</p>
+   		
+	</h:form>
+</h:body>
+</html>

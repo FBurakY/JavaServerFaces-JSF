@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>#{title}</title>
+</h:head>
+<h:body>
+
+	<div style="border-width: 2px; border-color: green; border-style: solid;">
+		<ui:insert name="headerArea">
+			<ui:include src="header.xhtml">
+				<ui:param name="defaultHeaderParam"
+					value="#{faceletsTemplateBean.defaultHeaderMessage}">
+				</ui:param>
+			</ui:include>
+		</ui:insert>
+	</div>	
+	<br />
+	
+	<div style="border-width: 2px; border-color: black; border-style: solid;">
+		<ui:insert name="contentArea">
+			<ui:include src="content.xhtml" >
+				<ui:param name="defautContentParam"
+					value="Hello content parameter.">
+				</ui:param>
+			</ui:include>
+		</ui:insert>
+	</div>
+	<br />
+	
+	<div style="border-width: 2px; border-color: red; border-style: solid;">
+		<ui:insert name="footerArea">
+			<ui:include src="footer.xhtml">
+				<ui:param name="defaultFooterParam"
+					value="#{faceletsTemplateBean.defaultFooterParam}">
+				</ui:param>
+			</ui:include>
+		</ui:insert>
+	</div>
+</h:body>
+</html>

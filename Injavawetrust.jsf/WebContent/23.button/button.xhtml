@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>h:commandButton and h:button components</title>
+</h:head>
+
+<script>
+function submitForm(myform){
+	  var myForm=document.getElementById("formId1");
+	  myForm.action = "page2.xhtml";
+	  myForm.submit();
+}
+</script>
+
+<h:body>
+	<h:form prependId="false" id="formId1">
+		<p>
+			<h:commandButton value="Page1" action="page1" />
+		</p>
+
+		<p>
+			<h:commandButton value="Page2" action="#{buttonBean.navigateToPage2}" />
+		</p>
+		
+		<p>
+			<h:commandButton value="Nothing Happens!" type="button" action="page1" />
+		</p>
+		
+		<p>
+			<h:commandButton value="Say Hello"  onclick="alert('hello')" />
+		</p>
+		
+		<p>
+			<h:commandButton value="Submit the Form!"  onclick="submitForm()" />
+		</p>
+		
+		<p>
+			<h:commandButton image="java.png" action="page1"/>
+		</p>
+		
+		<p>
+			<h:commandButton image="/resources/images/duke.png" action="page1"/>
+		</p>
+		
+		<h:button value="h:button page1!" outcome="page1" />
+		
+		<!--  Bu ifade legal degildir! burada #{buttonBean.navigateToPage1} 
+		ifadesi icin navigateToPage1 degerini buttonBean'in property alani olarak degerlendirir.
+		<p>
+			<h:button value="h:button page1!" outcome="#{buttonBean.navigateToPage1}" />
+		</p>
+		-->
+	</h:form>
+</h:body>
+</html>
