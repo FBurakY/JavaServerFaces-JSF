@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+
+ <h:form>
+ 	<table>
+ 		<tr>
+ 			<td> #{msgs.name} : </td>
+ 			<td> <h:inputText value="#{personBean.name}"></h:inputText> </td>
+ 		</tr> 		
+ 		<tr>
+ 			<td> #{msgs.password}  : </td>
+ 			<td> <h:inputSecret value="#{personBean.password}"></h:inputSecret> </td>
+ 		</tr>
+ 		
+ 	</table>
+ 	 <p>
+ 	  <h:commandButton value="#{msgs.click}" action="welcome.xhtml"></h:commandButton>
+ 	 </p>
+ 	
+
+ </h:form>
+ 
+     <h:form>
+        <h:commandLink  action="#{languageBean.changeLanguage('en')}" value="English"/>
+        <h:commandLink  action="#{languageBean.changeLanguage('tr')}" value="Turkish"/>
+    </h:form>
+ 
+
+</body>
+</html>
