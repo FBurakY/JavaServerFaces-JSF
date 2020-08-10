@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+    http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+    version="2.0">
+     <application>
+		<resource-bundle>
+			<base-name>messageFile</base-name>
+			<var>msgs</var>
+			
+		</resource-bundle>
+		
+		<message-bundle>		
+		 	errorMessages
+		</message-bundle>
+		<!--
+		https://www.mkyong.com/jsf2/customize-validation-error-message-in-jsf-2-0/ 
+		http://stackoverflow.com/questions/2668161/internationalization-in-jsf-when-to-use-message-bundle-and-resource-bundle
+		 -->
+		
+     </application>
+</faces-config>

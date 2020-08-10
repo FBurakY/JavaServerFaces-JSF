@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 
+	  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core" 
+      xmlns:h="http://java.sun.com/jsf/html">
+    
+	   <h:head>
+	      <h:outputStylesheet library="css" name="styles.css"/>
+	      <title>#{msgs.title}</title>
+	   </h:head>
+	   <h:body>
+	   
+	   <!-- 
+	   http://stackoverflow.com/questions/4830588/localization-in-jsf-how-to-remember-selected-locale-per-session-instead-of-per
+	    -->	   
+	   
+	    <h:form>                                 	              
+				<h:commandButton action="#{localeBean.setLanguage('en')}"
+					value="English" image="resources/images/EN.png" />
+				
+				<h:commandButton action="#{localeBean.setLanguage('tr')}"
+					value="Turkish" image="resources/images/TR.png" />
+        </h:form>
+	   
+	      <h:form>
+	         <h1>#{msgs.enterPayment}</h1>
+	         <h:panelGrid columns="3">
+	         
+	         	#{msgs.cardHolderName}
+	            <h:inputText id="cardHolderName" label="#{msgs.cardHolderName}"
+	                         value="#{payment.cardHolderName}" required="true">	               
+	            </h:inputText>
+	            <h:message for="cardHolderName" styleClass="errorMessage"/>
+	         
+	         
+	            #{msgs.amount}
+	            <h:inputText id="amount" label="#{msgs.amount}"
+	                         value="#{payment.amount}">
+	               <f:convertNumber minFractionDigits="2" type="number"/>
+	               <f:validateDoubleRange minimum="1.5" maximum="10000" />
+	            </h:inputText>
+	            <h:message for="amount" styleClass="errorMessage"/>
+	
+	            #{msgs.creditCard}
+				<h:inputText id="creditCard" label="#{msgs.creditCard}" value="#{payment.creditCard}" required="true">
+						<f:validateLength minimum="13" maximum="16"/>
+				</h:inputText>                      
+	            <h:message for="creditCard" styleClass="errorMessage" />
+	            
+	            
+	            #{msgs.cvv}
+				<h:inputText id="cvv" label="#{msgs.cvv}" value="#{payment.cvv}">
+						<f:validateRequired for="cvv"/>
+	
+				</h:inputText>                      
+	            <h:message for="cvv" styleClass="errorMessage" />
+	
+	            #{msgs.expirationDate}
+	            <h:inputText id="date" label="#{msgs.expirationDate}"
+	                         value="#{payment.date}">
+	               <f:convertDateTime pattern="MM/yyyy"/>
+	            </h:inputText>
+	            <h:message for="date" styleClass="errorMessage"/>
+	         
+	         </h:panelGrid>
+	         
+	         <h:commandButton value="#{msgs.process}" action="result"/>
+	         
+	               
+	      </h:form>
+	      	            	    	
+	   </h:body>
+</html>
